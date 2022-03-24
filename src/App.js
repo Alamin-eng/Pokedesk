@@ -1,25 +1,19 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import Logo from "./logo";
+import BestPokemon from "./bestPokemon";
+import CaughtPokemon from "./caughtPokemon";
 
-function App() {
+let abilities = ["Anticipation", "Adaptability", "Run-Away"];
+let date = new Date().toLocaleTimeString();
+let App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // we need an element and return only one element, in this case div
+    <div>
+      <Logo appName="Pokedex" />
+      <BestPokemon cash = {abilities}/>
+      <CaughtPokemon dates = {date}/>
     </div>
   );
-}
+};
 
 export default App;
